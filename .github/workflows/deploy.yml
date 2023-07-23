@@ -29,7 +29,7 @@ jobs:
           key: ${{secrets.PRIVATE_KEY}}
           envs: GITHUB_SHA
           script: |
-            docker login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_PASSWORD}}
+            docker login -u ${{secrets.DOCKER_USER}} --password-stdin ${{secrets.DOCKER_PASSWORD}}
             docker pull mahesh21319/mahesh-m
             docker stop backend_server
             docker rm backend_server
