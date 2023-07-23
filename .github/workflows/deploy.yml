@@ -29,7 +29,6 @@ jobs:
           key: ${{secrets.PRIVATE_KEY}}
           envs: GITHUB_SHA
           script: |
-            docker login
             docker pull mahesh21319/mahesh-m
             docker stop backend_server
             docker rm backend_server
